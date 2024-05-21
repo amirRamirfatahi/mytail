@@ -58,3 +58,7 @@ Mytail is a simple http server with one end-point. The end-point uses a process 
    A component that makes sure the host machine is not overwhelmed even if the load on the server is high.
 2. Http Server:
    Responsible for serving requests
+
+### 5. Security Considerations
+
+The current version of Mytail is limiting the possibilty of "keywords" you can look for in the logs to make sure it's maintaining high security. If the limitation are not acceptable at any point in time and changes are being made, a more proper sanitization must also be put in place.
