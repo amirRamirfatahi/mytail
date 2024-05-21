@@ -1,5 +1,5 @@
 const {
-  SERVER_PORT = "5000",
+  SERVER_PORT = "3000",
   DEFAULT_LINE_COUNT = "10",
   DEFAULT_FILE_PATH = "syslog",
   MAX_LINES_COUNT = 10000,

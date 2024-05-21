@@ -18,7 +18,7 @@ async function getFile(query: ParsedUrlQuery): Promise<string> {
   const filePath = query.file as string;
   if (filePath) {
     try {
-      await validateFile(filePath);
+      await validateFile("/var/log/" + filePath);
     } catch (error: any) {
       throw new HttpError(404, "The specified file does not exist.");
     }

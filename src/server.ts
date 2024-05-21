@@ -30,7 +30,12 @@ const server = http.createServer(async (req, res) => {
       res.end(JSON.stringify({ error: error.message }));
     } else {
       res.writeHead(500, { "Content-Type": "application/json" });
-      res.end(JSON.stringify({ error: "Internal Server Error" }));
+      res.end(
+        JSON.stringify({
+          error: "Internal Server Error",
+          cause: (error as Error).message,
+        })
+      );
     }
   }
 });
