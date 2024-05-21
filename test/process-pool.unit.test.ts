@@ -16,3 +16,11 @@ test("Process is successfully executed and the output is returned", async () => 
   const res = await echo(pool);
   expect(res[0]).toEqual("Hello World");
 });
+
+test("Execution is enqueued when the queue is already full and processed when dequeued", async () => {
+  const pool = new ProcessPool(2);
+  const results = await Promise.all([echo(pool), echo(pool), echo(pool)]);
+  results.forEach((res) => {
+    expect(res[0]).toEqual("Hello World");
+  });
+});
