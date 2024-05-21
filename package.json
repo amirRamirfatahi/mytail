@@ -5,10 +5,15 @@
   "name": "mytail",
   "version": "1.0.0",
   "description": "A Log monitoring and retrieval app",
-  "main": "dist/server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch dist/server.js",
+    "prod": "npx tsc . && node dist/server.js",
+    "test:unit": "",
+    "test:component": "",
+    "test": "npm run test:unit && npm run test:component"
   },
   "repository": {
     "type": "git",
